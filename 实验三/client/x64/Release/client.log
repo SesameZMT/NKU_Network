@@ -1,0 +1,9 @@
+﻿  client.cpp
+C:\Users\19309\Desktop\文档\计算机网络\实验三\client\client.cpp(268,27): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\19309\Desktop\文档\计算机网络\实验三\client\client.cpp(287,21): warning C4267: “=”: 从“size_t”转换到“u_long”，可能丢失数据
+  正在生成代码
+  8 of 184 functions ( 4.3%) were compiled, the rest were copied from previous compilation.
+    4 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  client.vcxproj -> C:\Users\19309\Desktop\文档\计算机网络\实验三\client\x64\Release\client.exe

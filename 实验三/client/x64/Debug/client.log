@@ -1,0 +1,4 @@
+﻿  client.cpp
+C:\Users\19309\Desktop\文档\计算机网络\实验三\client\client.cpp(264,27): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\19309\Desktop\文档\计算机网络\实验三\client\client.cpp(283,21): warning C4267: “=”: 从“size_t”转换到“u_long”，可能丢失数据
+  client.vcxproj -> C:\Users\19309\Desktop\文档\计算机网络\实验三\client\x64\Debug\client.exe

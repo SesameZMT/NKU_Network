@@ -1,0 +1,4 @@
+﻿  server.cpp
+C:\Users\19309\Desktop\文档\计算机网络\实验三\server\server.cpp(342): warning C4715: “recvmessages”: 不是所有的控件路径都返回值
+C:\Users\19309\Desktop\文档\计算机网络\实验三\server\server.cpp(289): warning C4715: “getFileName”: 不是所有的控件路径都返回值
+  server.vcxproj -> C:\Users\19309\Desktop\文档\计算机网络\实验三\server\x64\Debug\server.exe

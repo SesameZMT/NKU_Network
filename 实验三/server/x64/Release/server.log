@@ -1,0 +1,8 @@
+﻿  server.cpp
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+C:\Users\19309\Desktop\文档\计算机网络\实验三\server\server.cpp(342): warning C4715: “recvmessages”: 不是所有的控件路径都返回值
+C:\Users\19309\Desktop\文档\计算机网络\实验三\server\server.cpp(289): warning C4715: “getFileName”: 不是所有的控件路径都返回值
+  All 168 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  server.vcxproj -> C:\Users\19309\Desktop\文档\计算机网络\实验三\server\x64\Release\server.exe
