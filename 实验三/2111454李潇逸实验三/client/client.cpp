@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <fstream>
+#include<thread>
 using namespace std;
 #pragma comment(lib,"ws2_32.lib")
 #define SERVER_IP "127.0.0.1"
@@ -10,6 +11,8 @@ using namespace std;
 #define SERVER_PORT 6666
 #define CLIENT_PORT 8080
 #define BUFFER sizeof(message)
+const int windowSize = 10;
+#define TIMEOUT 50
 #pragma warning(disable:4996)
 int judgeRand() {
     int s = rand() % 100;
@@ -112,12 +115,19 @@ struct message
 SOCKADDR_IN serveraddr, clientaddr;
 SOCKET Client;
 int messagenum;
+int lastlen;
 int len = sizeof(SOCKADDR);
 char filepath[20];
 clock_t timestart;
 clock_t timeend;
 int filelen;
 ifstream in;
+char buffer[20000][8192];
+int state[20000];
+int sendbase = 0;
+int sendtop = windowSize - 1;
+bool isFINISH = false;
+
 
 message recvmessage();
 void sendmessage(message msg);
@@ -263,14 +273,29 @@ int openFile() {
     }
     if (isFileExists_fopen(temp)) {
         strcpy(filepath, temp.c_str());
-        in.open(filepath, ifstream::in | ios::binary);// 以二进制方式打开文件
-        in.seekg(0, std::ios_base::end);  // 将文件流指针定位到流的末尾
+        in.open(filepath, ifstream::in | ios::binary);
+        in.seekg(0, std::ios_base::end);
         filelen = in.tellg();
-        messagenum = filelen / 1024 + 1;
+        messagenum = filelen / 8192 + 1;
         SetColor(0, 6);
+        lastlen = filelen - (messagenum - 1) * 8192;
         cout << "文件大小为" << filelen << "Bytes,总共有" << messagenum << "个数据包" << endl;
-        in.seekg(0, std::ios_base::beg);  // 将文件流指针定位到流的开始
+        in.seekg(0, std::ios_base::beg);
+        int index = 0, len = 0;
+        // 将文件读入缓冲区
+        char t = in.get();
+        while (in) {
+            buffer[index][len] = t;
+            len++;
+            if (len == 8192) {
+                len = 0;
+                index++;
+            }
+            t = in.get();
+        }
+        in.close();
         return 1;
+    }
     }
     else {
         SetColor(12, 0);
@@ -295,7 +320,7 @@ int sendFileName() {
         return 0;
     }
     timestart = clock();
-    return sendmessages();
+    return 0;
 }
 int sendmessages() {
     SetColor(0, 6);

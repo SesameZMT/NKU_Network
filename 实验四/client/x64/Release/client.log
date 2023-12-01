@@ -1,0 +1,13 @@
+﻿  client.cpp
+C:\Users\19309\Desktop\文档\计算机网络\实验四\client\client.cpp(206,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\19309\Desktop\文档\计算机网络\实验四\client\client.cpp(209,27): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\19309\Desktop\文档\计算机网络\实验四\client\client.cpp(241,21): warning C4267: “=”: 从“size_t”转换到“u_long”，可能丢失数据
+C:\Users\19309\Desktop\文档\计算机网络\实验四\client\client.cpp(379,24): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\19309\Desktop\文档\计算机网络\实验四\client\client.cpp(381,21): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\19309\Desktop\文档\计算机网络\实验四\client\client.cpp(410,39): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\19309\Desktop\文档\计算机网络\实验四\client\client.cpp(413,39): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 213 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  client.vcxproj -> C:\Users\19309\Desktop\文档\计算机网络\实验四\client\x64\Release\client.exe
