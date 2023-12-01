@@ -227,8 +227,6 @@ int openFile() {
         in.close();
         return 1;
     }
-    //注意，上面这个函数其实并不完美，因为是一股脑读入内存的，那如果传一个很大的文件其实是不可行的
-    //不过给的四个测试文件都是一些小文件，因此这块内容就当成toy program写了。
 }
 
 
@@ -414,9 +412,6 @@ int main()
     serveraddr.sin_family = AF_INET;
     serveraddr.sin_port = htons(SERVER_PORT);
     bind(Client, (SOCKADDR*)&clientaddr, sizeof(SOCKADDR));
-    //此处貌似不绑定也行，但是具体是怎么回事也没弄明白
-    //据说想用那个router.exe就必须绑定
-    //但是那个破文件我打不开。。。
     SetColor(12, 0);
     cout << "成功创建客户端！" << endl;
     SetColor(12, 0);
